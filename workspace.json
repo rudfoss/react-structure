@@ -1,8 +1,9 @@
 {
-  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
-  "version": 2,
-  "projects": {
-    "store-wfe": "apps/store-wfe",
-    "store-wfe-e2e": "apps/store-wfe-e2e"
-  }
+	"$schema": "./node_modules/nx/schemas/workspace-schema.json",
+	"version": 2,
+	"projects": {
+		"store-wfe": "apps/store-wfe",
+		"store-wfe-e2e": "apps/store-wfe-e2e",
+		"utils": "libs/utils"
+	}
 }

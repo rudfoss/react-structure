@@ -7,6 +7,7 @@
 		"mikerhyssmith.ts-barrelr",
 		"tobermory.es6-string-html",
 		"styled-components.vscode-styled-components",
-		"ms-azuretools.vscode-bicep"
+		"ms-azuretools.vscode-bicep",
+		"firsttris.vscode-jest-runner"
 	]
 }

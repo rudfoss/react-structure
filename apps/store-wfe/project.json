@@ -1,83 +1,84 @@
 {
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/store-wfe/src",
-  "projectType": "application",
-  "targets": {
-    "build": {
-      "executor": "@nrwl/web:webpack",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "compiler": "swc",
-        "outputPath": "dist/apps/store-wfe",
-        "index": "apps/store-wfe/src/index.html",
-        "baseHref": "/",
-        "main": "apps/store-wfe/src/main.tsx",
-        "polyfills": "apps/store-wfe/src/polyfills.ts",
-        "tsConfig": "apps/store-wfe/tsconfig.app.json",
-        "assets": [
-          "apps/store-wfe/src/favicon.ico",
-          "apps/store-wfe/src/assets"
-        ],
-        "styles": [],
-        "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
-      },
-      "configurations": {
-        "development": {
-          "extractLicenses": false,
-          "optimization": false,
-          "sourceMap": true,
-          "vendorChunk": true
-        },
-        "production": {
-          "fileReplacements": [
-            {
-              "replace": "apps/store-wfe/src/environments/environment.ts",
-              "with": "apps/store-wfe/src/environments/environment.prod.ts"
-            }
-          ],
-          "optimization": true,
-          "outputHashing": "all",
-          "sourceMap": false,
-          "namedChunks": false,
-          "extractLicenses": true,
-          "vendorChunk": false
-        }
-      }
-    },
-    "serve": {
-      "executor": "@nrwl/web:dev-server",
-      "defaultConfiguration": "development",
-      "options": {
-        "buildTarget": "store-wfe:build",
-        "hmr": true
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "store-wfe:build:development"
-        },
-        "production": {
-          "buildTarget": "store-wfe:build:production",
-          "hmr": false
-        }
-      }
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/store-wfe/**/*.{ts,tsx,js,jsx}"]
-      }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/store-wfe"],
-      "options": {
-        "jestConfig": "apps/store-wfe/jest.config.ts",
-        "passWithNoTests": true
-      }
-    }
-  },
-  "tags": []
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "apps/store-wfe/src",
+	"projectType": "application",
+	"targets": {
+		"build": {
+			"executor": "@nrwl/web:webpack",
+			"outputs": ["{options.outputPath}"],
+			"defaultConfiguration": "production",
+			"options": {
+				"compiler": "swc",
+				"outputPath": "dist/apps/store-wfe",
+				"index": "apps/store-wfe/src/index.html",
+				"baseHref": "/",
+				"main": "apps/store-wfe/src/main.tsx",
+				"polyfills": "apps/store-wfe/src/polyfills.ts",
+				"tsConfig": "apps/store-wfe/tsconfig.app.json",
+				"assets": ["apps/store-wfe/src/favicon.ico"],
+				"styles": [],
+				"scripts": [],
+				"webpackConfig": "@nrwl/react/plugins/webpack"
+			},
+			"configurations": {
+				"development": {
+					"extractLicenses": false,
+					"optimization": false,
+					"sourceMap": true,
+					"vendorChunk": true
+				},
+				"production": {
+					"optimization": true,
+					"outputHashing": "all",
+					"sourceMap": false,
+					"namedChunks": false,
+					"extractLicenses": true,
+					"vendorChunk": false
+				},
+				"analyze": {
+					"optimization": true,
+					"outputHashing": "all",
+					"sourceMap": true,
+					"namedChunks": false,
+					"extractLicenses": true,
+					"vendorChunk": false,
+					"statsJson": true
+				}
+			}
+		},
+		"serve": {
+			"executor": "@nrwl/web:dev-server",
+			"defaultConfiguration": "development",
+			"options": {
+				"buildTarget": "store-wfe:build",
+				"hmr": true
+			},
+			"configurations": {
+				"development": {
+					"buildTarget": "store-wfe:build:development"
+				},
+				"production": {
+					"buildTarget": "store-wfe:build:production",
+					"hmr": false
+				}
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["apps/store-wfe/**/*.{ts,tsx,js,jsx}"]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["coverage/apps/store-wfe"],
+			"options": {
+				"jestConfig": "apps/store-wfe/jest.config.ts",
+				"passWithNoTests": true,
+				"codeCoverage": true
+			}
+		}
+	},
+	"tags": []
 }
