@@ -29,7 +29,10 @@
 					"warn",
 					{
 						"groups": ["builtin", "external", ["internal", "sibling", "parent", "index"]],
-						"pathGroups": [{ "pattern": "@svelvik/**", "group": "internal", "position": "before" }],
+						"pathGroups": [
+							{ "pattern": "@app/**", "group": "internal", "position": "before" },
+							{ "pattern": "@react-structure/**", "group": "internal", "position": "before" }
+						],
 						"pathGroupsExcludedImportTypes": ["internal"],
 						"alphabetize": { "order": "asc", "caseInsensitive": false },
 						"newlines-between": "always"

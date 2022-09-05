@@ -1,14 +1,27 @@
-import styled from "@emotion/styled"
 import React from "react"
+import { BrowserRouter } from "react-router-dom"
+import "modern-normalize"
 
-const H1 = styled.h1`
-	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-	font-size: 42px;
-	color: hotpink;
-`
+import { ReactQueryProvider } from "@app/contexts/reactQuery"
+import { Routes } from "@app/routes"
 
-const AppComponent = () => {
-	return <H1>Hello world</H1>
-}
+import { ErrorBoundary } from "@react-structure/utils/react/ErrorBoundary"
+import { DevModeProvider } from "@react-structure/utils/react/devMode"
+
+import { ApiClientsProvider } from "./contexts/apiClients/apiClientsContext"
+
+const AppComponent = () => (
+	<DevModeProvider>
+		<ErrorBoundary>
+			<ApiClientsProvider>
+				<ReactQueryProvider>
+					<BrowserRouter>
+						<Routes />
+					</BrowserRouter>
+				</ReactQueryProvider>
+			</ApiClientsProvider>
+		</ErrorBoundary>
+	</DevModeProvider>
+)
 
 export const App = React.memo(AppComponent)

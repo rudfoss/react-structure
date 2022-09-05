@@ -3,26 +3,10 @@
 	"tasks": [
 		{
 			"type": "npm",
-			"script": "start:studio-wfe",
+			"script": "start",
 			"problemMatcher": [],
-			"label": "start:studio-wfe",
+			"label": "start:store-wfe",
 			"isBackground": true
-		},
-		{
-			"type": "npm",
-			"script": "start:studio-wbe",
-			"problemMatcher": [],
-			"label": "start:studio-wbe",
-			"isBackground": true
-		},
-
-		{
-			"label": "start",
-			"dependsOn": ["start:studio-wfe", "start:studio-wbe"],
-			"dependsOrder": "parallel",
-			"problemMatcher": [],
-			"isBackground": true,
-			"detail": "Start the development environment locally"
 		}
 	]
 }

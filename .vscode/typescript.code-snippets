@@ -34,7 +34,7 @@
 		"body": [
 			"import { createContext } from \"react\"",
 			"",
-			"import { createContextUser } from \"@rudfoss/utils/react/createContextUser\"",
+			"import { createContextUser } from \"@react-structure/utils/react/createContextUser\"",
 			"",
 			"interface ${1:name}ContextProps {",
 			"\t${0}",

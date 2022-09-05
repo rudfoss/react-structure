@@ -6,6 +6,8 @@ React structure:
 		☐ Global (zustand/redux)
 		☐ Computed state (useMemo wisely)
 	☐ Custom hooks
+	☐ Code-splitting
+	☐ Debug namespace
 	☐ Intent-folders with index.ts
 	☐ Common core folders: contexts, features, data (react-query), store, routes, ui, layouts
 	☐ React-Query, Zustand, Emotion/Styled Components
