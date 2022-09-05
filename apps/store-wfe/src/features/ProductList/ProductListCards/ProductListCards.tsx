@@ -5,12 +5,14 @@ import { Product } from "@react-structure/clients/dummyJSON"
 
 import { ProductListCard, ProductListCardProps } from "./ProductListCard"
 
-const CardContainer = styled.ul`
-	display: flex;
+const CardContainer = styled.ul<{ fillWidth?: boolean }>`
+	display: ${({ fillWidth }) => (fillWidth ? "block" : "flex")};
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: stretch;
 	list-style: none;
+	margin: 0;
+	padding: 0;
 `
 const CardItem = styled.li`
 	margin: 12px;
@@ -24,7 +26,7 @@ export interface ProductListCardsProps {
 
 const ProductListCardsComponent = ({ products, size }: ProductListCardsProps) => {
 	return (
-		<CardContainer>
+		<CardContainer fillWidth={size === "large"}>
 			{products.map((product) => (
 				<CardItem key={product.id}>
 					<ProductListCard size={size} product={product} />

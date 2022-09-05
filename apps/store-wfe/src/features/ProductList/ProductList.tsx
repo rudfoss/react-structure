@@ -3,19 +3,26 @@ import React from "react"
 
 import { Product } from "@react-structure/clients/dummyJSON"
 
-import { ProductListCards } from "./ProductListCards"
+import { ProductListCards, ProductListCardsProps } from "./ProductListCards"
+import { ProductListTable, ProductListTableProps } from "./ProductListTable"
 
 export interface ProductListProps {
 	products: Product[]
 	displayMode?: "cards" | "table"
+	cardModeSize?: ProductListCardsProps["size"]
+	tableModeSize?: ProductListTableProps["size"]
 }
 
-const ProductListComponent = ({ products, displayMode = "cards" }: ProductListProps) => {
+const ProductListComponent = ({ products, displayMode = "cards", cardModeSize, tableModeSize }: ProductListProps) => {
 	if (products.length === 0) {
 		return <Alert severity="info">There are no products to display</Alert>
 	}
 
-	return displayMode === "cards" ? <ProductListCards products={products} /> : <>not implemented yet</>
+	return displayMode === "cards" ? (
+		<ProductListCards products={products} size={cardModeSize} />
+	) : (
+		<ProductListTable products={products} size={tableModeSize} />
+	)
 }
 
 export const ProductList = React.memo(ProductListComponent)

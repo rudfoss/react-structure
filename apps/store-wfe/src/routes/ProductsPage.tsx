@@ -1,11 +1,16 @@
 import React from "react"
 
-import { ProductListData } from "@app/features/ProductList"
+import { ProductListControls, ProductListData, ProductListProvider } from "@app/features/ProductList"
 import { useSetPageTitle } from "@app/store/pageStore"
 
 const ProductsPageComponent = () => {
 	useSetPageTitle("Products")
-	return <ProductListData />
+	return (
+		<ProductListProvider>
+			<ProductListControls />
+			<ProductListData />
+		</ProductListProvider>
+	)
 }
 
 export const ProductsPage = React.memo(ProductsPageComponent)

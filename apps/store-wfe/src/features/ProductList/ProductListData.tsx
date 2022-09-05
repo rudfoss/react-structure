@@ -3,20 +3,25 @@ import React from "react"
 
 import { useProductsData } from "@app/data/productsData"
 
-import { ProductList, ProductListProps } from "./ProductList"
+import { ProductList } from "./ProductList"
+import { useProductListContextUndefined } from "./productListContext"
 
-export interface ProductListDataProps {
-	displayMode?: ProductListProps["displayMode"]
-}
-
-const ProductListDataComponent = ({ displayMode }: ProductListDataProps) => {
+const ProductListDataComponent = () => {
 	const { data: products, isLoading } = useProductsData()
+	const { cardModeSize, displayMode, tableModeSize } = useProductListContextUndefined()
 
 	if (isLoading) {
 		return <CircularProgress title="Loading products..." />
 	}
 
-	return <ProductList products={products ?? []} displayMode={displayMode} />
+	return (
+		<ProductList
+			products={products ?? []}
+			displayMode={displayMode?.[0]}
+			cardModeSize={cardModeSize?.[0]}
+			tableModeSize={tableModeSize?.[0]}
+		/>
+	)
 }
 
 export const ProductListData = React.memo(ProductListDataComponent)

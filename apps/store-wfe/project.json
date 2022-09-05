@@ -46,6 +46,23 @@
 				}
 			}
 		},
+		"analyze-start": {
+			"executor": "@nrwl/workspace:run-commands",
+			"dependsOn": [
+				{
+					"projects": "self",
+					"target": "build:analyze"
+				}
+			],
+			"options": {
+				"parallel": true,
+				"color": true,
+				"commands": [
+					"webpack-bundle-analyzer dist/apps/store-wfe/stats.json -m static -r dist/apps/store-wfe/report-webpack-bundle-analyzer.html",
+					"source-map-explorer dist/apps/store-wfe/*.js --html dist/apps/store-wfe/report-source-map-explorer.html"
+				]
+			}
+		},
 		"serve": {
 			"executor": "@nrwl/web:dev-server",
 			"defaultConfiguration": "development",

@@ -7,9 +7,9 @@ import { Context, useContext } from "react"
  * @returns
  */
 export const createContextUser =
-	<TValue>(context: Context<TValue>, mustInitialize = true) =>
+	<TValue>(context: Context<TValue>, mustInitialize = true, customError?: string) =>
 	() => {
 		const ctx = useContext(context)
-		if (!ctx && mustInitialize) throw new Error(`${context.displayName} must be provided before use`)
+		if (!ctx && mustInitialize) throw new Error(customError ?? `${context.displayName} must be provided before use`)
 		return ctx
 	}
