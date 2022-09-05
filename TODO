@@ -1,0 +1,19 @@
+React structure:
+	☐ Function components with React.memo
+	☐ States
+		☐ Local (useState)
+		☐ Subtree (context)
+		☐ Global (zustand/redux)
+		☐ Computed state (useMemo wisely)
+	☐ Custom hooks
+	☐ Intent-folders with index.ts
+	☐ Common core folders: contexts, features, data (react-query), store, routes, ui, layouts
+	☐ React-Query, Zustand, Emotion/Styled Components
+	☐ https://dummyjson.com
+
+Monorepo:
+	☐ Code sharing
+	☐ All-in-one view
+	☐ NX: Dependency graph
+	☐ NX: Build-affected
+	☐ NX: Generators
