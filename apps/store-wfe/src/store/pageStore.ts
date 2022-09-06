@@ -4,12 +4,14 @@ import { devtools } from "zustand/middleware"
 
 export interface PageStore {
 	title: string
+	homeBtn: boolean
 }
 
 export const usePageStore = create(
 	devtools<PageStore>(
 		() => ({
-			title: ""
+			title: "",
+			homeBtn: false
 		}),
 		{
 			name: "PageStore"
@@ -17,8 +19,8 @@ export const usePageStore = create(
 	)
 )
 
-export const useSetPageTitle = (title: string) => {
+export const useSetPageTitle = (title: string, homeBtn?: boolean) => {
 	useEffect(() => {
-		usePageStore.setState({ title })
-	}, [title])
+		usePageStore.setState((prev) => ({ title, homeBtn: homeBtn ?? prev.homeBtn }))
+	}, [title, homeBtn])
 }

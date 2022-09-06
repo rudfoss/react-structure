@@ -58,7 +58,7 @@ const DevModeProviderComponent = ({
 		} else {
 			console.log("Dev mode disabled")
 		}
-	}, [devModeEnabled])
+	}, [appName, devModeEnabled])
 
 	return <DevModeContext.Provider value={{ devModeEnabled, setDevMode }}>{children}</DevModeContext.Provider>
 }

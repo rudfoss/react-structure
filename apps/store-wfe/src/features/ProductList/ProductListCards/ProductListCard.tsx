@@ -1,5 +1,6 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
 import React from "react"
+import { useNavigate } from "react-router-dom"
 
 import { Product } from "@react-structure/clients/dummyJSON"
 
@@ -20,7 +21,13 @@ const cardSize = (size: ProductListCardProps["size"] = "medium") => {
 }
 
 const ProductListCardComponent = ({ product, size }: ProductListCardProps) => {
+	const nav = useNavigate()
 	const { maxWidth, height } = cardSize(size)
+
+	const openProduct = () => {
+		nav(`/products/${product.id}`)
+	}
+
 	return (
 		<Card sx={{ maxWidth, height: "100%", display: "flex", flexDirection: "column" }}>
 			<CardMedia component="img" height={height} image={product.images[0]} alt={`Product image of ${product.title}`} />
@@ -34,7 +41,9 @@ const ProductListCardComponent = ({ product, size }: ProductListCardProps) => {
 				<Typography variant="body2">{product.description}</Typography>
 			</CardContent>
 			<CardActions sx={{ marginTop: "auto" }}>
-				<Button size="small">More information</Button>
+				<Button size="small" onClick={openProduct}>
+					More information
+				</Button>
 			</CardActions>
 		</Card>
 	)

@@ -12,5 +12,10 @@ export const productsDataKeys = {
 
 export const useProductsData = (page: PagedProducts = { limit: 30 }) => {
 	const { products } = useApiClients()
-	return useQuery(productsDataKeys.paged(page), async () => (await products(page)).products)
+	return useQuery(productsDataKeys.paged(page), async () => (await products.products(page)).products)
+}
+
+export const useProductData = (productId: Product["id"]) => {
+	const { products } = useApiClients()
+	return useQuery(productsDataKeys.byId(productId), () => products.product(productId))
 }

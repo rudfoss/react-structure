@@ -9,7 +9,7 @@ import { useProductListContext } from "../productListContext"
 const Container = styled.div`
 	display: flex;
 	margin: 12px;
-	& > *:not(:first-child) {
+	& > *:not(div:first-of-type) {
 		margin-left: 12px;
 	}
 `

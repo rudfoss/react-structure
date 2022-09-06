@@ -2,6 +2,8 @@ import styled from "@emotion/styled"
 import { TableCell, TableRow } from "@mui/material"
 import React from "react"
 
+import { Link } from "@app/ui/Link"
+
 import { Product } from "@react-structure/clients/dummyJSON"
 
 const ProductImage = styled.img`
@@ -20,7 +22,9 @@ const ProductListTableRowComponent = ({ product }: ProductListTableRowProps) => 
 			<TableCell>
 				<ProductImage src={images[0]} alt={title} />
 			</TableCell>
-			<TableCell>{title}</TableCell>
+			<TableCell>
+				<Link to={`/products/${product.id}`}>{title}</Link>
+			</TableCell>
 			<TableCell>{category}</TableCell>
 			<TableCell>{rating}</TableCell>
 			<TableCell>${price}</TableCell>

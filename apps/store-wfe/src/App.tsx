@@ -11,7 +11,7 @@ import { DevModeProvider } from "@react-structure/utils/react/devMode"
 import { ApiClientsProvider } from "./contexts/apiClients/apiClientsContext"
 
 const AppComponent = () => (
-	<DevModeProvider>
+	<DevModeProvider name="app">
 		<ErrorBoundary>
 			<ApiClientsProvider>
 				<ReactQueryProvider>

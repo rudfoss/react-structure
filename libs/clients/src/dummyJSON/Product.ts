@@ -26,9 +26,14 @@ export interface PagedProducts {
 	skip?: number
 }
 
-export const productClient =
-	(httpClient: HttpClient) =>
-	async (page: PagedProducts = { limit: 30 }) => {
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		return await httpClient<ProductResponse>("products", page as any)
+export const productClient = (httpClient: HttpClient) => {
+	return {
+		products: async (page: PagedProducts = { limit: 30 }) => {
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			return await httpClient<ProductResponse>("products", page as any)
+		},
+		product: async (productId: Product["id"]) => {
+			return await httpClient<Product>(["products", productId + ""])
+		}
 	}
+}

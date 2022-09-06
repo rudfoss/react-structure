@@ -4,7 +4,7 @@ import { ProductListControls, ProductListData, ProductListProvider } from "@app/
 import { useSetPageTitle } from "@app/store/pageStore"
 
 const ProductsPageComponent = () => {
-	useSetPageTitle("Products")
+	useSetPageTitle("Products", true)
 	return (
 		<ProductListProvider>
 			<ProductListControls />
