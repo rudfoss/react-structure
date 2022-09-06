@@ -20,7 +20,8 @@ export const onChange =
  * @returns
  */
 export const onMuiChange =
-	(onChange: (newText: string) => unknown, filter?: (newText: string) => boolean) => (_: unknown, newText: string) => {
-		if (filter && !filter(newText)) return
-		onChange(newText)
+	<T>(onChange: (newValue: T) => unknown, filter?: (newValue: T) => boolean) =>
+	(_: unknown, newValue: T) => {
+		if (filter && !filter(newValue)) return
+		onChange(newValue)
 	}
