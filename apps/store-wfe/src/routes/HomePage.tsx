@@ -1,3 +1,4 @@
+import styled from "@emotion/styled"
 import React from "react"
 import { MdOutlineLocalGroceryStore } from "react-icons/md"
 
@@ -5,13 +6,18 @@ import { CenteredLayout } from "@app/layouts"
 import { useSetPageTitle } from "@app/store/pageStore"
 import { Link } from "@app/ui/Link"
 
+const StyledLink = styled(Link)`
+	text-align: center;
+`
+
 const HomePageComponent = () => {
 	useSetPageTitle("Homepage", false)
 	return (
 		<CenteredLayout>
-			<Link to="products">
+			<StyledLink to="products">
 				<MdOutlineLocalGroceryStore size={128} />
-			</Link>
+				<p>Visit store</p>
+			</StyledLink>
 		</CenteredLayout>
 	)
 }
