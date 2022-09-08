@@ -4,7 +4,6 @@
 	"projects": {
 		"clients": "libs/clients",
 		"store-wfe": "apps/store-wfe",
-		"store-wfe-e2e": "apps/store-wfe-e2e",
 		"ui": "libs/ui",
 		"utils": "libs/utils"
 	}
