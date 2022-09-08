@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Routes as ReactRoutes, Route } from "react-router-dom"
 
 import { MainLayout } from "@app/layouts"
@@ -10,20 +10,7 @@ const ProductDetailsPage = React.lazy(() =>
 )
 const ProductsPage = React.lazy(() => import("./ProductsPage").then(({ ProductsPage }) => ({ default: ProductsPage })))
 
-let preloaded = false
-const preload = () => {
-	if (preloaded) return
-	preloaded = true
-
-	setTimeout(() => {
-		import("./ProductDetailsPage")
-		import("./ProductsPage")
-	}, 100)
-}
-
 const RoutesComponent = () => {
-	useEffect(preload, [])
-
 	return (
 		<React.Suspense>
 			<ReactRoutes>
