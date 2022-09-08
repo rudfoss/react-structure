@@ -17,7 +17,10 @@
 		"strictNullChecks": true,
 		"esModuleInterop": true,
 		"baseUrl": ".",
-		"paths": {}
+		"paths": {
+			"@app/*": ["apps/store-wfe/src/*"],
+			"@react-structure/ui/*": ["libs/ui/src/*"]
+		}
 	},
 	"exclude": ["node_modules", "tmp"]
 }
