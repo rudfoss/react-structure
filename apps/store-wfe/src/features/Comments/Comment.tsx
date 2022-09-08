@@ -25,7 +25,7 @@ export interface CommentProps {
 	onRemove?: () => unknown
 }
 
-const CommentComponent = ({ comment, onRemove }: CommentProps) => {
+export const CommentComponent = ({ comment, onRemove }: CommentProps) => {
 	return (
 		<Li>
 			<div>
