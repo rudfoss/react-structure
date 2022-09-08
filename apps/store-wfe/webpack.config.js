@@ -5,6 +5,10 @@ module.exports = (config) => {
 		devtool: "source-map"
 	})
 
+	if (mergedConfig.optimization) {
+		delete mergedConfig.optimization.minimizer
+	}
+
 	if (mergedConfig.mode === "development") {
 		mergedConfig.plugins = mergedConfig.plugins.filter((plugin) => {
 			if (plugin.constructor?.toString().includes("ForkTsCheckerWebpackPlugin")) {

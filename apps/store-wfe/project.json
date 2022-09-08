@@ -18,7 +18,7 @@
 				"assets": ["apps/store-wfe/src/favicon.ico"],
 				"styles": [],
 				"scripts": [],
-				"webpackConfig": "@nrwl/react/plugins/webpack"
+				"webpackConfig": "apps/store-wfe/webpack.config.js"
 			},
 			"configurations": {
 				"development": {

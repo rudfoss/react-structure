@@ -3,7 +3,8 @@
 	"version": "0.0.0",
 	"license": "MIT",
 	"scripts": {
-		"start": "nx run store-wfe:serve"
+		"start": "nx run store-wfe:serve",
+		"analyze": "nx run store-wfe:build:analyze && nx run store-wfe:analyze"
 	},
 	"private": true,
 	"devDependencies": {
