@@ -19,8 +19,9 @@ export const usePageStore = create(
 	)
 )
 
-export const useSetPageTitle = (title: string, homeBtn?: boolean) => {
+export const useSetPageTitle = (title?: string, homeBtn?: boolean) => {
 	useEffect(() => {
+		if (title === undefined) return
 		usePageStore.setState((prev) => ({ title, homeBtn: homeBtn ?? prev.homeBtn }))
 	}, [title, homeBtn])
 }

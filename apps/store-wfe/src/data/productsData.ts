@@ -17,5 +17,5 @@ export const useProductsData = (page: PagedProducts = { limit: 30 }) => {
 
 export const useProductData = (productId: Product["id"]) => {
 	const { products } = useApiClients()
-	return useQuery(productsDataKeys.byId(productId), () => products.product(productId))
+	return useQuery(productsDataKeys.byId(productId), () => products.product(productId), { enabled: !isNaN(productId) })
 }
