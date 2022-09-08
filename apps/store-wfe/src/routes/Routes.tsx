@@ -3,6 +3,8 @@ import { Routes as ReactRoutes, Route } from "react-router-dom"
 
 import { MainLayout } from "@app/layouts"
 
+import { NavigateRefProvider } from "@react-structure/utils/react-router/navigateRefContext"
+
 import { HomePage } from "./HomePage"
 
 const ProductDetailsPage = React.lazy(() =>
@@ -13,15 +15,17 @@ const ProductsPage = React.lazy(() => import("./ProductsPage").then(({ ProductsP
 const RoutesComponent = () => {
 	return (
 		<React.Suspense>
-			<ReactRoutes>
-				<Route path="/" element={<MainLayout />}>
-					<Route index element={<HomePage />} />
-					<Route path="products">
-						<Route index element={<ProductsPage />} />
-						<Route path=":id" element={<ProductDetailsPage />} />
+			<NavigateRefProvider>
+				<ReactRoutes>
+					<Route path="/" element={<MainLayout />}>
+						<Route index element={<HomePage />} />
+						<Route path="products">
+							<Route index element={<ProductsPage />} />
+							<Route path=":id" element={<ProductDetailsPage />} />
+						</Route>
 					</Route>
-				</Route>
-			</ReactRoutes>
+				</ReactRoutes>
+			</NavigateRefProvider>
 		</React.Suspense>
 	)
 }

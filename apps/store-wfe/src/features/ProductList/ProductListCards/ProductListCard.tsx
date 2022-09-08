@@ -1,8 +1,8 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
 import React from "react"
-import { useNavigate } from "react-router-dom"
 
 import { Product } from "@react-structure/clients/dummyJSON"
+import { useNavigateRef } from "@react-structure/utils/react-router/navigateRefContext"
 
 export interface ProductListCardProps {
 	product: Product
@@ -21,11 +21,11 @@ const cardSize = (size: ProductListCardProps["size"] = "medium") => {
 }
 
 const ProductListCardComponent = ({ product, size }: ProductListCardProps) => {
-	const nav = useNavigate()
+	const { navRef } = useNavigateRef()
 	const { maxWidth, height } = cardSize(size)
 
 	const openProduct = () => {
-		nav(`/products/${product.id}`)
+		navRef.current(`/products/${product.id}`)
 	}
 
 	return (

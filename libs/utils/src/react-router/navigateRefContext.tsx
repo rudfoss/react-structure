@@ -40,6 +40,4 @@ const NavigateRefProviderComponent = ({ children }: NavigateRefProviderProps) =>
  * **Why?**
  * https://github.com/remix-run/react-router/issues/7634
  */
-export const NavigateRefProvider = React.memo(
-	NavigateRefProviderComponent
-) as unknown as typeof NavigateRefProviderComponent
+export const NavigateRefProvider = React.memo(NavigateRefProviderComponent)
