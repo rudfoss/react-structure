@@ -19,7 +19,9 @@
 		"baseUrl": ".",
 		"paths": {
 			"@app/*": ["apps/store-wfe/src/*"],
-			"@react-structure/ui/*": ["libs/ui/src/*"]
+			"@react-structure/clients/*": ["libs/clients/src/*"],
+			"@react-structure/ui/*": ["libs/ui/src/*"],
+			"@react-structure/utils/*": ["libs/utils/src/*"]
 		}
 	},
 	"exclude": ["node_modules", "tmp"]

@@ -2,13 +2,19 @@ import React from "react"
 import { BrowserRouter } from "react-router-dom"
 import "modern-normalize"
 
-import { Routes } from "./routes"
+import { ApiClientsProvider } from "@app/contexts/apiClients"
+import { ReactQueryProvider } from "@app/contexts/reactQuery"
+import { Routes } from "@app/routes"
 
 const AppComponent = () => {
 	return (
-		<BrowserRouter>
-			<Routes />
-		</BrowserRouter>
+		<ApiClientsProvider>
+			<ReactQueryProvider>
+				<BrowserRouter>
+					<Routes />
+				</BrowserRouter>
+			</ReactQueryProvider>
+		</ApiClientsProvider>
 	)
 }
 

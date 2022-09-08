@@ -2,7 +2,9 @@
 	"$schema": "./node_modules/nx/schemas/workspace-schema.json",
 	"version": 2,
 	"projects": {
+		"clients": "libs/clients",
 		"store-wfe": "apps/store-wfe",
-		"ui": "libs/ui"
+		"ui": "libs/ui",
+		"utils": "libs/utils"
 	}
 }
