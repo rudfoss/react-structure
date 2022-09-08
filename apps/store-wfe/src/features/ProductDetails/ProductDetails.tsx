@@ -4,9 +4,9 @@ import React from "react"
 import { Comments } from "@app/features/Comments"
 import { CenteredLayout } from "@app/layouts"
 import { useSetPageTitle } from "@app/store/pageStore"
-import { ImageCarousel } from "@app/ui/ImageCarousel"
 
 import { Product } from "@react-structure/clients/dummyJSON"
+import { ImageCarousel } from "@react-structure/ui/ImageCarousel"
 
 export interface ProductDetailsProps {
 	product: Product

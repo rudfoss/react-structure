@@ -62,7 +62,7 @@ const ProductListControlsComponent = () => {
 					onChange={onChangeHandler(setTableModeSize as any)}
 				>
 					<ToggleButton value="small">Dense</ToggleButton>
-					<ToggleButton value="normal">Normal</ToggleButton>
+					<ToggleButton value="medium">Normal</ToggleButton>
 				</ToggleButtonGroup>
 			)}
 		</Container>

@@ -3,7 +3,7 @@ import { IconButton, Typography } from "@mui/material"
 import React from "react"
 import { MdRemove } from "react-icons/md"
 
-import { FriendlyDate } from "@app/ui/FriendlyDate"
+import { FriendlyDate } from "@react-structure/ui/FriendlyDate"
 
 const Li = styled.li`
 	padding: 0;

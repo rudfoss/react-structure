@@ -4,7 +4,8 @@ import { MdOutlineLocalGroceryStore } from "react-icons/md"
 
 import { CenteredLayout } from "@app/layouts"
 import { useSetPageTitle } from "@app/store/pageStore"
-import { Link } from "@app/ui/Link"
+
+import { Link } from "@react-structure/ui/Link"
 
 const StyledLink = styled(Link)`
 	text-align: center;

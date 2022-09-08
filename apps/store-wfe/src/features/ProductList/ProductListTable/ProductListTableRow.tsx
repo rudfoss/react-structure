@@ -2,9 +2,8 @@ import styled from "@emotion/styled"
 import { TableCell, TableRow } from "@mui/material"
 import React from "react"
 
-import { Link } from "@app/ui/Link"
-
 import { Product } from "@react-structure/clients/dummyJSON"
+import { Link } from "@react-structure/ui/Link"
 
 const ProductImage = styled.img`
 	max-height: 32px;
