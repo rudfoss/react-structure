@@ -46,7 +46,7 @@
 				}
 			}
 		},
-		"analyze-start": {
+		"analyze": {
 			"executor": "@nrwl/workspace:run-commands",
 			"dependsOn": [
 				{
