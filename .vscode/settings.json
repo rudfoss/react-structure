@@ -37,6 +37,5 @@
 	"typescript.tsdk": "node_modules\\typescript\\lib",
 	"editor.wordWrapColumn": 120,
 	"editor.wordWrap": "wordWrapColumn",
-	"task.quickOpen.history": 0,
-	"cSpell.words": ["Svelvik"]
+	"task.quickOpen.history": 0
 }
